@@ -1,0 +1,5 @@
+lt all
+alc
+vswr16a
+pmrk -r 106 -m 1 | grep Int_RadioRecInterference
+hgetc retsub sector|basestation|label|lnumber|stat

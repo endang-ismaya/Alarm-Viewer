@@ -1,0 +1,9 @@
+unset all
+
+lt all
+$lines = readfile(./$nodename_fddlocked_02.log)
+for $i = 1 to $nr_of_lines
+set $lines[$i] administrativeState 0
+done
+
+wait 30

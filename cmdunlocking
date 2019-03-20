@@ -1,0 +1,14 @@
+unset all
+
+lt all
+l+ $nodename_fddlocked_01.log
+ma fddlocked EUtranCellFDD= administrativeState|primaryplmnreserved 0|true
+st fddlocked
+l-
+l cat $nodename_fddlocked_01.log | egrep 'EUtranCellFDD=C' | awk '{print $6}' > $nodename_fddlocked_02.log
+deb fddlocked
+wait 30
+
+mr fddlocked
+
+unset all
